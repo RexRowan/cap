@@ -2,8 +2,8 @@
 
 To start, run: docker-compose up --build
 
-Frontend: port 3000
+Frontend: http://localhost:3000
 
-Backend: port 8000
+Backend: http://0.0.0.0:8000/
 
-API: localhost:8000/api/tasks
+API: http://0.0.0.0:8000/api/tasks
