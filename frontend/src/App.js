@@ -21,7 +21,7 @@ class App extends Component {
 
   refreshList = () => {
     axios
-      .get("https://turbo-halibut-957jrq7rr5cppjp-8000.app.github.dev/api/tasks/")
+      .get("http://backend:8000/api/tasks/")
       .then(res => this.setState({ taskList: res.data }))
       .catch(err => console.log(err));
   };
