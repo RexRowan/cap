@@ -64,18 +64,18 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/tasks/${item.id}/`, item)
+        .put(`http://backend:8000/api/tasks//${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/tasks/", item)
+      .post("http://backend:8000/api/tasks/", item)
       .then(res => this.refreshList());
   };
 
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/tasks/${item.id}/`)
+      .delete(`http://backend:8000/api/tasks/${item.id}/`)
       .then(res => this.refreshList());
   };
 
