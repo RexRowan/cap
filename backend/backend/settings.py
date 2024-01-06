@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-a%6a135+ou^$_=i&_4_o3@^!33!$07-bl*l5x-)2mgu5rw^f!o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://turbo-halibut-957jrq7rr5cppjp-8000.app.github.dev/api/tasks/', 'localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -45,12 +45,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -103,10 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # whitelisting React port
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+    'https://turbo-halibut-957jrq7rr5cppjp-3000.app.github.dev',
 ]
 
 # Internationalization
