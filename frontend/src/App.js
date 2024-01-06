@@ -21,7 +21,7 @@ class App extends Component {
 
   refreshList = () => {
     axios
-      .get("http://backend:8000/api/tasks/")
+      .get("https://backend:8000/api/tasks/")
       .then(res => this.setState({ taskList: res.data }))
       .catch(err => console.log(err));
   };
@@ -64,18 +64,18 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://backend:8000/api/tasks//${item.id}/`, item)
+        .put(`https://backend:8000/api/tasks//${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://backend:8000/api/tasks/", item)
+      .post("https://backend:8000/api/tasks/", item)
       .then(res => this.refreshList());
   };
 
   handleDelete = item => {
     axios
-      .delete(`http://backend:8000/api/tasks/${item.id}/`)
+      .delete(`https://backend:8000/api/tasks/${item.id}/`)
       .then(res => this.refreshList());
   };
 
